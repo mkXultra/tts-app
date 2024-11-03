@@ -1,6 +1,6 @@
 "use client";
 
-import { Login, CorbadoAuth } from "@corbado/react";
+import { CorbadoAuth } from "@corbado/react";
 import { useRouter } from "next/navigation";
 
 export default function LoginForm() {

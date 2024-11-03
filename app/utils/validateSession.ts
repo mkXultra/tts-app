@@ -9,7 +9,6 @@ export default async function validateSession(shortSession: string | undefined) 
   const sdk = createNodeSDK();
   const verifiedSession = await sdk.sessions().validateToken(shortSession);
   console.log('verifiedSession', verifiedSession);
-  // const verifiedSession = await sdk.sessions().validateShortSessionValue(shortSession);
 
   if (!verifiedSession.userId) {
     return false;
