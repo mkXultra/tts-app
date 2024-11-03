@@ -4,7 +4,7 @@ import validateSession from './app/utils/validateSession';
 
 const routes = {
   publicPaths: ['/'],
-  privatePaths: ['/profile', '/tts'],
+  privatePaths: ['/tts'],
   authPaths: ['/login', '/signup'],
 };
 
@@ -21,7 +21,7 @@ export async function middleware(request: NextRequest) {
 
   console.log('isSessionValid', isSessionValid);
   if (isSessionValid && routes.authPaths.includes(url.pathname)) {
-    url.pathname = '/profile';
+    url.pathname = '/tts';
     return NextResponse.redirect(url);
   }
 
