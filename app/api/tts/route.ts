@@ -20,7 +20,7 @@ export async function POST(request: Request) {
     };
 
     const [response] = await client.synthesizeSpeech(request_tts);
-    const audioContent = response.audioContent?.toString();
+    const audioContent = Buffer.from(response.audioContent as Buffer).toString('base64');
     
     return NextResponse.json({ audioContent });
   } catch (error) {
