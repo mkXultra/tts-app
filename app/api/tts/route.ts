@@ -1,8 +1,8 @@
+export const maxDuration = 60; // This function can run for a maximum of 60 seconds
 import { TextToSpeechClient } from '@google-cloud/text-to-speech';
 import { NextResponse } from 'next/server';
 
 const client = new TextToSpeechClient({
-  // credentials: JSON.parse(process.env.GOOGLE_APPLICATION_CREDENTIALS!)
   apiKey: process.env.GOOGLE_APPLICATION_API_KEY
 });
 
