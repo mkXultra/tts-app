@@ -16,11 +16,11 @@ export async function POST(request: Request) {
         languageCode: 'ja-JP',
         name: voiceName
       },
-      audioConfig: { audioEncoding: 'MP3' },
+      audioConfig: { audioEncoding: 'MP3' as const },
     };
 
     const [response] = await client.synthesizeSpeech(request_tts);
-    const audioContent = response.audioContent?.toString('base64');
+    const audioContent = response.audioContent?.toString();
     
     return NextResponse.json({ audioContent });
   } catch (error) {

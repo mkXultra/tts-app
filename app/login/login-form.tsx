@@ -7,18 +7,12 @@ export default function LoginForm() {
   const router = useRouter();
 
   const onLoggedIn = () => {
-    window.location.href = "/tts";
-
-  };
-
-  const navigateToSignup = () => {
-    router.push("/signup");
+    router.push("/tts");
   };
 
   return (
     <div className="shadow-effect">
-      {/* <Login onLoggedIn={onLoggedIn} navigateToSignUp={navigateToSignup} /> */}
-      <CorbadoAuth onLoggedIn={onLoggedIn} navigateToSignUp={navigateToSignup} /> 
+      <CorbadoAuth onLoggedIn={onLoggedIn} /> 
     </div>
   );
 }
